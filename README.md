@@ -44,7 +44,11 @@ It uses the **OpenWeatherMap API** to fetch weather and forecast data and suppor
 - Context API & React Hooks – For state management
 
 ---
+📄 License
+This project is licensed under the MIT License — feel free to use and modify it.
 
+Made with ❤️ by Hazem Gouda
+---
 ### 📦 Installation
 
 ```bash
@@ -59,8 +63,3 @@ npm install
 
 # Start the development server
 npm start
-
-📄 License
-This project is licensed under the MIT License — feel free to use and modify it.
-
-Made with ❤️ by Hazem Gouda
