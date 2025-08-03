@@ -28,10 +28,7 @@ It uses the **OpenWeatherMap API** to fetch weather and forecast data and suppor
 
 ### 📸 Screenshots
 
-![Weather App (Light Mode)](imgs/weather1.png)  
-![Weather App (Arabic - Dark Mode)](imgs/weather2.png)
-
-> ⚠️ Add your real screenshots in the `imgs/` folder and name them accordingly.
+![Weather App Screenshot](./imgs/screenshot.png)
 
 ---
 
