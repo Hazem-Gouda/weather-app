@@ -28,7 +28,7 @@ It uses the **OpenWeatherMap API** to fetch weather and forecast data and suppor
 
 ### 📸 Screenshots
 
-![Weather App Screenshot](./imgs/screenshot1.png)
+![Weather App Screenshot](./imgs/Screenshot1.png)
 
 ---
 
