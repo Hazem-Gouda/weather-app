@@ -23,6 +23,8 @@ It uses the **OpenWeatherMap API** to fetch weather and forecast data and suppor
 - ✅ Displays today’s **min and max temperatures**
 - 💡 Responsive & clean design using **Bootstrap**
 - 📡 Real-time data from OpenWeatherMap API
+- 🧪 Tested with **Jest + React Testing Library (RTL)**  
+- ♿ Improved **Accessibility (a11y)** for better user experience
 
 ---
 
@@ -39,6 +41,8 @@ It uses the **OpenWeatherMap API** to fetch weather and forecast data and suppor
 - [OpenWeatherMap API](https://openweathermap.org/) – Weather data provider
 - [Moment.js](https://momentjs.com/) – Date/time formatting
 - Context API & React Hooks – For state management
+- [Jest](https://jestjs.io/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) – Unit & integration testing  
+- Accessibility (a11y) best practices
 
 ---
 📄 License
