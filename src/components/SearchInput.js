@@ -10,8 +10,8 @@ import { WeatherContext } from "../WeatherContext";
  * - Prevents searching for invalid codes (like country codes).
  */
 function SearchInput() {
-  // Get context values for city, setter, error, and language
-  const { city, setCity, error, lang } = useContext(WeatherContext);
+  // Get context values: setter, error, and language
+  const { setCity, error, lang } = useContext(WeatherContext);
   // Local state for the input field (always starts empty)
   const [input, setInput] = useState("");
 
@@ -35,7 +35,7 @@ function SearchInput() {
 
   // Render the search form
   return (
-    <form className="input-group mb-3" onSubmit={handleSearch}>
+    <form className="input-group mb-3" onSubmit={handleSearch} aria-label={buttonText + ' form'}>
       {/* Input field for city name */}
       <input
         type="text"
@@ -43,10 +43,11 @@ function SearchInput() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder={placeholder}
+        aria-label={placeholder}
         dir={lang === "ar" ? "rtl" : "ltr"}
       />
       {/* Search button */}
-      <button className="btn btn-primary" type="submit">
+      <button className="btn btn-primary" type="submit" aria-label={buttonText}>
         {buttonText}
       </button>
       {/* Show error message if any */}

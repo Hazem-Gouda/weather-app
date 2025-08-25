@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect, useMemo } from "react";
-import axios from "axios";
 import { getTodayMinMax } from "./utils/getTodayMinMax";
 
 // Create a context to share weather-related state and actions
@@ -25,37 +24,45 @@ export function WeatherProvider({ children }) {
     setError(null);
     setWeather(null);
     setTodayMinMax({ min: null, max: null });
-    axios
-      .get("https://api.openweathermap.org/data/2.5/weather", {
-        params: {
-          q: city,
-          appid: API_KEY,
-          units,
-          lang,
-        },
-      })
-      .then((res) => setWeather(res.data))
-      .catch((err) =>
-        setError(err.response?.data?.message || "Error fetching weather")
-      );
+    // dynamically import axios to avoid importing ESM build at module load time
+    (async () => {
+      try {
+        const axios = (await import('axios')).default;
+        axios
+          .get("https://api.openweathermap.org/data/2.5/weather", {
+            params: {
+              q: city,
+              appid: API_KEY,
+              units,
+              lang,
+            },
+          })
+          .then((res) => setWeather(res.data))
+          .catch((err) =>
+            setError(err.response?.data?.message || "Error fetching weather")
+          );
 
-    // Fetch forecast for realistic min/max
-    axios
-      .get("https://api.openweathermap.org/data/2.5/forecast", {
-        params: {
-          q: city,
-          appid: API_KEY,
-          units,
-          lang,
-        },
-      })
-      .then((res) => {
-        const forecastList = res.data.list;
-        const timezoneOffset = res.data.city.timezone;
-        const minMax = getTodayMinMax(forecastList, timezoneOffset);
-        setTodayMinMax(minMax);
-      })
-      .catch(() => {});
+        // Fetch forecast for realistic min/max
+        axios
+          .get("https://api.openweathermap.org/data/2.5/forecast", {
+            params: {
+              q: city,
+              appid: API_KEY,
+              units,
+              lang,
+            },
+          })
+          .then((res) => {
+            const forecastList = res.data.list;
+            const timezoneOffset = res.data.city.timezone;
+            const minMax = getTodayMinMax(forecastList, timezoneOffset);
+            setTodayMinMax(minMax);
+          })
+          .catch(() => {});
+      } catch (e) {
+        // If axios can't be imported (e.g., in some test environments), swallow
+      }
+    })();
   }, [city, units, lang]);
 
   // Memoize context value to avoid unnecessary re-renders

@@ -7,8 +7,7 @@ import { WeatherContext } from "../WeatherContext";
  * WeatherInfo displays the current weather information for the selected city.
  */
 function WeatherInfo() {
-  const { weather, error, lang, units, city, todayMinMax } =
-    useContext(WeatherContext);
+  const { weather, error, lang, units, todayMinMax } = useContext(WeatherContext);
 
   // Don't show anything if there's an error (handled in SearchInput)
   if (error) return null;
@@ -59,7 +58,7 @@ function WeatherInfo() {
   const dateTimeStr =
     lang === "ar"
       ? localMoment.locale("ar").format("dddd، D MMMM YYYY - h:mm A")
-      : localMoment.locale("en").format("dddd, MMM D YYYY - h:mm A");
+      : localMoment.locale("en").format("dddd, D MMM YYYY - h:mm A");
 
   // Translations for labels
   const labels = {
@@ -79,7 +78,7 @@ function WeatherInfo() {
 
   return (
     // Always center content, regardless of language
-    <div className="text-center" dir={lang === "ar" ? "rtl" : "ltr"}>
+    <div className="text-center" dir={lang === "ar" ? "rtl" : "ltr"} aria-live="polite">
       {/* Date and time (device time zone, styled, same order for both languages) */}
       <div
         className="mb-2"

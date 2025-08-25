@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Improve focus visibility for keyboard users */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid #000000; /* black for strong contrast */
+  outline-offset: 2px;
+}

@@ -7,6 +7,8 @@ function UnitToggle() {
   const isMetric = units === "metric";
   const cLabel = lang === "ar" ? "°م" : "°C";
   const fLabel = lang === "ar" ? "°ف" : "°F";
+  const cAria = lang === 'ar' ? `عرض الدرجات ${cLabel}` : `${cLabel} units`;
+  const fAria = lang === 'ar' ? `عرض الدرجات ${fLabel}` : `${fLabel} units`;
 
   return (
     // Add unit-toggle class for custom styling
@@ -16,6 +18,8 @@ function UnitToggle() {
         className={`btn btn-outline-primary${isMetric ? " active" : ""}`}
         onClick={() => setUnits("metric")}
         style={{ marginRight: "12px" }}
+  aria-pressed={isMetric}
+  aria-label={cAria}
       >
         {cLabel}
       </button>
@@ -24,6 +28,8 @@ function UnitToggle() {
         className={`btn btn-outline-primary${!isMetric ? " active" : ""}`}
         onClick={() => setUnits("imperial")}
         style={{ marginLeft: "12px" }}
+  aria-pressed={!isMetric}
+  aria-label={fAria}
       >
         {fLabel}
       </button>
