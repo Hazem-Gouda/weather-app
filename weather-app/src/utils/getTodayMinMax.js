@@ -1,6 +1,6 @@
 // Utility to get today's min/max temperature in local city time
 export function getTodayMinMax(forecastList, timezoneOffsetInSeconds) {
-  // Using seconds for consistency and to avoid local Date mistakes
+  // Use epoch seconds for consistency and to avoid local Date ambiguities
   const nowUtcSeconds = Math.floor(Date.now() / 1000);
   const nowLocalSeconds = nowUtcSeconds + timezoneOffsetInSeconds;
   const nowLocal = new Date(nowLocalSeconds * 1000);
