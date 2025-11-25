@@ -1,4 +1,3 @@
-"use client"
 import { useContext } from "react";
 import moment from "moment";
 import "moment/locale/ar";
@@ -15,9 +14,8 @@ function WeatherInfo() {
   // Show loading spinner if weather data is not yet loaded
   if (!weather)
     return (
-      <div className="text-center my-4" role="status" aria-live="polite">
-        <div className="spinner-border text-primary" role="status" aria-hidden="true"></div>
-        <span className="visually-hidden">Loading weather information</span>
+      <div className="text-center my-4">
+        <div className="spinner-border text-primary" role="status"></div>
       </div>
     );
 

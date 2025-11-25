@@ -1,0 +1,100 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4f8cff 0%, #a6e1fa 100%);
+  font-family: 'Segoe UI', 'Cairo', Arial, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-white {
+  background: rgba(255,255,255,0.95) !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+input.form-control {
+  border-radius: 2rem 0 0 2rem !important;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.btn-primary, .btn-outline-primary.active {
+  background: linear-gradient(90deg, #4f8cff 60%, #6fd6ff 100%);
+  border: none;
+  border-radius: 0 2rem 2rem 0 !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.btn-outline-primary {
+  border-radius: 2rem !important;
+}
+
+.btn-group .btn {
+  min-width: 60px;
+}
+
+.display-4 {
+  font-weight: 700;
+  color: #4f8cff;
+  letter-spacing: 1px;
+}
+
+.bg-light {
+  background: #f3f7fa !important;
+}
+
+.text-end[dir="rtl"] {
+  text-align: right !important;
+}
+
+input[dir="rtl"] {
+  text-align: right;
+}
+
+/* Make the weather card even wider and visually prominent */
+.col-md-8.col-lg-6 {
+  max-width: 700px;
+  min-width: 340px;
+}
+
+/* Center the language toggle buttons */
+.center-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Improve the look of the unit toggle buttons */
+.btn-group.unit-toggle .btn {
+  border-radius: 2rem !important;
+  min-width: 80px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-group.unit-toggle .btn.active, .btn-group.unit-toggle .btn:focus {
+  background: linear-gradient(90deg, #4f8cff 60%, #6fd6ff 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.10);
+}
+.btn-group.unit-toggle .btn:not(.active) {
+  background: #f3f7fa;
+  color: #4f8cff;
+  border: 1px solid #4f8cff;
+}
+
+@media (max-width: 600px) {
+  .col-md-8.col-lg-6 {
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .display-4 {
+    font-size: 2.2rem;
+  }
+}
