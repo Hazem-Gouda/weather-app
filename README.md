@@ -1,3 +1,50 @@
+# Weather Next (converted from CRA)
+
+This repository contains a Next.js (App Router) port of the original Create React App weather project. The original CRA project remains untouched in your other folder.
+
+Quick start (development)
+
+1. Install dependencies:
+
+   npm install
+
+2. Add an OpenWeather API key to `.env.local` (example below) and DO NOT commit it.
+
+   Create `.env.local` with:
+
+   OPENWEATHER_API_KEY=your_real_openweather_api_key_here
+
+3. Run the dev server:
+
+   npx next dev
+
+4. Open the app in the browser (the terminal will show the local URL):
+
+   http://localhost:3000 (or the port shown by Next)
+
+Notes about this migration
+
+- Global CSS and Bootstrap are loaded from `app/layout.jsx`. App-specific styles were copied from the CRA `App.css` into `src/components/App.css` so components keep their original look.
+- Server-side API proxy routes are implemented under `app/api/weather/route.js` and `app/api/forecast/route.js`. They require the server env var `OPENWEATHER_API_KEY`.
+- Interactive components were marked as client components (`'use client'`) so they behave the same as in CRA.
+
+If you do not want to use a real API key for development, ask me to enable a demo fallback that returns canned data.
+
+Files of interest
+
+- `app/layout.jsx` — Next.js layout: imports global CSS, bootstrap, providers.
+- `app/page.jsx` — mounts `src/components/App`.
+- `src/context/WeatherContext.js` — app context (calls our server API routes).
+- `src/components/*` — UI components from the original CRA app.
+- `app/api/*` — server proxy routes for OpenWeather.
+
+Development checklist
+
+- Install dependencies: `npm install`
+- Add `.env.local` with `OPENWEATHER_API_KEY`
+- Run `npx next dev` and open the URL shown in the terminal
+
+If you want, I can (optional): copy public images from the CRA project into `public/`, add a demo mode, or prepare a branch with these changes.
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

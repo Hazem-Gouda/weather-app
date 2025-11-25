@@ -18,8 +18,10 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* App-specific background comes from App.css to preserve original CRA theme */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,6 +30,16 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+/* Improve focus visibility for keyboard users (copied from CRA index.css) */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid #000000;
+  outline-offset: 2px;
 }
 
 a {
