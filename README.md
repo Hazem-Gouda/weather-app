@@ -1,83 +1,66 @@
-# Weather Next (converted from CRA)
+## 🌤️ Weather App
 
-This repository contains a Next.js (App Router) port of the original Create React App weather project. The original CRA project remains untouched in your other folder.
+Click here to view the live demo:
 
-Quick start (development)
+[![View Demo](https://img.shields.io/badge/View-Demo-blue?style=for-the-badge)](https://hazem-gouda.github.io/weather-app)
 
-1. Install dependencies:
+---
 
-   npm install
+### 🌦️ About the Project
 
-2. Add an OpenWeather API key to `.env.local` (example below) and DO NOT commit it.
+A modern and user-friendly **Weather App** built with **React**, allowing users to search for any city's current weather and see real-time data like temperature, weather description, min/max temperatures, and more.
 
-   Create `.env.local` with:
+It uses the **OpenWeatherMap API** to fetch weather and forecast data and supports both **Celsius/Fahrenheit** and **English/Arabic** language toggle.
 
-   OPENWEATHER_API_KEY=your_real_openweather_api_key_here
+---
 
-3. Run the dev server:
+### 🚀 Features
 
-   npx next dev
+- 🔍 Search weather by city name
+- 🌡️ View current temperature, description, humidity, and wind
+- 🔁 Switch between **Celsius** and **Fahrenheit**
+- 🌐 Toggle between **English** and **Arabic**
+- ✅ Displays today’s **min and max temperatures**
+- 💡 Responsive & clean design using **Bootstrap**
+- 📡 Real-time data from OpenWeatherMap API
+- 🧪 Tested with **Jest + React Testing Library (RTL)**  
+- ♿ Improved **Accessibility (a11y)** for better user experience
 
-4. Open the app in the browser (the terminal will show the local URL):
+---
 
-   http://localhost:3000 (or the port shown by Next)
+### 📸 Screenshots
 
-Notes about this migration
+![Weather App Screenshot](./imgs/Screenshot1.png)
 
-- Global CSS and Bootstrap are loaded from `app/layout.jsx`. App-specific styles were copied from the CRA `App.css` into `src/components/App.css` so components keep their original look.
-- Server-side API proxy routes are implemented under `app/api/weather/route.js` and `app/api/forecast/route.js`. They require the server env var `OPENWEATHER_API_KEY`.
-- Interactive components were marked as client components (`'use client'`) so they behave the same as in CRA.
+---
 
-If you do not want to use a real API key for development, ask me to enable a demo fallback that returns canned data.
+### 🛠️ Built With
 
-Files of interest
+- [React](https://reactjs.org/) – JavaScript library for building UIs
+- [Bootstrap](https://getbootstrap.com/) – Responsive design framework
+- [OpenWeatherMap API](https://openweathermap.org/) – Weather data provider
+- [Moment.js](https://momentjs.com/) – Date/time formatting
+- Context API & React Hooks – For state management
+- [Jest](https://jestjs.io/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) – Unit & integration testing  
+- Accessibility (a11y) best practices
 
-- `app/layout.jsx` — Next.js layout: imports global CSS, bootstrap, providers.
-- `app/page.jsx` — mounts `src/components/App`.
-- `src/context/WeatherContext.js` — app context (calls our server API routes).
-- `src/components/*` — UI components from the original CRA app.
-- `app/api/*` — server proxy routes for OpenWeather.
+---
+📄 License
+This project is licensed under the MIT License — feel free to use and modify it.
 
-Development checklist
-
-- Install dependencies: `npm install`
-- Add `.env.local` with `OPENWEATHER_API_KEY`
-- Run `npx next dev` and open the URL shown in the terminal
-
-If you want, I can (optional): copy public images from the CRA project into `public/`, add a demo mode, or prepare a branch with these changes.
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
+Made with ❤️ by Hazem Gouda
+---
+### 📦 Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Clone the repo
+git clone https://github.com/hazem-gouda/weather-app.git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Navigate into the directory
+cd weather-app
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Install dependencies
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Start the development server
+npm start
