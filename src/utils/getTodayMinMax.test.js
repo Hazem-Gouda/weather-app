@@ -10,14 +10,27 @@ test('handles list with a single timestamp not matching today by falling back', 
 });
 
 test('calculates min and max for today items', () => {
-  // Create two items with dt corresponding to today in UTC
+  // Create items within a 24-hour window to ensure they match today
+  // Use timestamps spread across the day
   const now = Math.floor(Date.now() / 1000);
-  const item1 = { dt: now, main: { temp_min: 7.2, temp_max: 12.8 } };
-  const item2 = { dt: now + 3600, main: { temp_min: 6.6, temp_max: 14.1 } };
-  const list = [item1, item2];
+  const midday = new Date(now * 1000);
+  midday.setHours(12, 0, 0, 0); // set to noon UTC
+  const noondaySeconds = Math.floor(midday.getTime() / 1000);
+  
+  const list = [
+    { dt: noondaySeconds, main: { temp_min: 7.2, temp_max: 12.8 } },
+    { dt: noondaySeconds + 3600, main: { temp_min: 6.6, temp_max: 14.1 } },
+    { dt: noondaySeconds + 7200, main: { temp_min: 5, temp_max: 13 } },
+    { dt: noondaySeconds + 10800, main: { temp_min: 6, temp_max: 12 } },
+    { dt: noondaySeconds + 14400, main: { temp_min: 7, temp_max: 11 } },
+    { dt: noondaySeconds + 18000, main: { temp_min: 8, temp_max: 10 } },
+    { dt: noondaySeconds + 21600, main: { temp_min: 9, temp_max: 9 } },
+    { dt: noondaySeconds + 25200, main: { temp_min: 10, temp_max: 8 } },
+  ];
   const offset = 0; // UTC
   const res = getTodayMinMax(list, offset);
-  expect(res).toEqual({ min: Math.round(6.6), max: Math.round(14.1) });
+  // All items should be today; min = 5, max = 14.1 -> 14
+  expect(res).toEqual({ min: 5, max: 14 });
 });
 
 test('falls back to next 24h slice when no today items', () => {
