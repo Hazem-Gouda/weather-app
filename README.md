@@ -8,9 +8,8 @@ Click here to view the live demo:
 
 ### 🌦️ About the Project
 
-A modern and user-friendly **Weather App** built with **React**, allowing users to search for any city's current weather and see real-time data like temperature, weather description, min/max temperatures, and more.
-
-It uses the **OpenWeatherMap API** to fetch weather and forecast data and supports both **Celsius/Fahrenheit** and **English/Arabic** language toggle.
+A modern and user-friendly **Weather App** built with **Next.js (React)**.  
+You can search for any city and view real-time weather.
 
 ---
 
@@ -23,17 +22,20 @@ It uses the **OpenWeatherMap API** to fetch weather and forecast data and suppor
 - ✅ Displays today’s **min and max temperatures**
 - 💡 Responsive & clean design using **Bootstrap**
 - 📡 Real-time data from OpenWeatherMap API
-- 🧪 Tested with **Jest + React Testing Library (RTL)**  
 - ♿ Improved **Accessibility (a11y)** for better user experience
 
 ---
 
-@@ -39,24 +41,26 @@
-- [OpenWeatherMap API](https://openweathermap.org/) – Weather data provider
-- [Moment.js](https://momentjs.com/) – Date/time formatting
-- Context API & React Hooks – For state management
-- [Jest](https://jestjs.io/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) – Unit & integration testing  
-- Accessibility (a11y) best practices
+### 🧰 Tech Stack
+
+- **Next.js**  
+- **React.js**  
+- **Bootstrap**  
+- **OpenWeatherMap API**  
+- **Moment.js**  
+- **React Hooks + Context API**  
+- **Jest + React Testing Library**  
+- **Accessibility (a11y)**
 
 ---
 📄 License
