@@ -46,14 +46,15 @@ Made with ❤️ by Hazem Gouda
 ### 📦 Installation
 
 ```bash
-# Clone the repo
+# Clone the repository
 git clone https://github.com/hazem-gouda/weather-app.git
 
-# Navigate into the directory
+# Go inside project folder
 cd weather-app
 
 # Install dependencies
 npm install
 
-# Start the development server
-npm start
+# Start development server (Next.js)
+npm run dev
+# open http://localhost:3000
