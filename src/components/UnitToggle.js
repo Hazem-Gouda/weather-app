@@ -1,6 +1,6 @@
 "use client"
 import { useContext } from "react";
-import { WeatherContext } from "../WeatherContext";
+import { WeatherContext } from "../context/WeatherContext";
 
 /* UnitToggle allows switching between Celsius and Fahrenheit. */
 function UnitToggle() {

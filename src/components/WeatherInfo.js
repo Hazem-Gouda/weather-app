@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import moment from "moment";
 import "moment/locale/ar";
-import { WeatherContext } from "../WeatherContext";
+import { WeatherContext } from "../context/WeatherContext";
 
 /**
  * WeatherInfo displays the current weather information for the selected city.

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import WeatherInfo from './WeatherInfo';
-import { WeatherContext } from '../WeatherContext';
+import { WeatherContext } from '../context/WeatherContext';
 
 const mockWeather = {
   main: { temp: 20, temp_min: 18, temp_max: 22, humidity: 50 },

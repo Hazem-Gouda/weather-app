@@ -1,6 +1,6 @@
 'use client'
 import { useContext } from 'react';
-import { WeatherContext } from '../WeatherContext';
+import { WeatherContext } from '../context/WeatherContext';
 
 /**
  * LanguageToggle allows switching between English and Arabic.

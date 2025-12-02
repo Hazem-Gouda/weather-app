@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import SearchInput from './SearchInput';
-import { WeatherContext } from '../WeatherContext';
+import { WeatherContext } from '../context/WeatherContext';
 
 function renderWithContext(ui, { providerProps, ...renderOptions }) {
   return render(

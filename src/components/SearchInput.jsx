@@ -1,6 +1,6 @@
 'use client'
 import React, { useContext, useState } from "react";
-import { WeatherContext } from "../WeatherContext";
+import { WeatherContext } from "../context/WeatherContext";
 
 /**
  * SearchInput
